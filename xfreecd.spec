@@ -16,7 +16,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_prefix		/usr/X11R6
 
 %description
-XfreeCD is a X windows program written using GTK+ that looks like the
+XfreeCD is a X Window program written using GTK+ that looks like the
 frontpanel of a cd player. It also supports the CDDB database of CD
 track information, and is certified for submitting new CD information
 to the database. At 137x90 it takes up a small amount of screen space.
