@@ -16,7 +16,7 @@ BuildRequires:	gtk+-devel
 BuildRequires:	glib-devel
 Buildroot:	/tmp/%{name}-%{version}-root
 
-%define	_prefix	/usr/X11R6
+%define		_prefix	/usr/X11R6
 
 %description
 XfreeCD is a X windows program written using GTK+ that looks like the
