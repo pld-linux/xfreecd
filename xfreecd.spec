@@ -1,8 +1,8 @@
 Summary:	Xfreecd, a CD player with CDDB features
 Summary(pl):	Xfreecd - odtwarzacz p³yt audio ze wsparciem dla CDDB
 Name:		xfreecd
-Version:	0.7.7
-Release:	3
+Version:	0.7.8
+Release:	1
 Copyright:	GPL
 Group:		X11/Amusements
 Group(pl):	X11/Rozrywka
