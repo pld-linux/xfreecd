@@ -6,11 +6,11 @@ Release:	3
 Copyright:	GPL
 Group:		X11/Amusements
 Group(pl):	X11/Rozrywka
-URL:		http://www.tatoosh.com/nexus/xfreecd.shtml
 Source:		http://www.tatoosh.com/nexus/linux/%{name}-%{version}.tar.gz
 Patch0:		xfreecd.patch
 Patch1:		xfreecd-gtk.patch
 Icon:		xfreecd.gif
+URL:		http://www.tatoosh.com/nexus/xfreecd.shtml
 BuildPrereq:	XFree86-devel
 BuildPrereq:	gtk+-devel
 BuildPrereq:	glib-devel
