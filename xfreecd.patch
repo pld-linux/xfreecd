@@ -1,0 +1,13 @@
+--- xfreecd-0.7.7.orig/Makefile	Mon Jul  6 00:25:56 1998
++++ xfreecd-0.7.7/Makefile	Fri Sep  4 19:05:23 1998
+@@ -9,8 +9,8 @@
+ endif
+ 
+ VERSION = 0.7.7
+-CFLAGS = -O2 -Wall -pipe `gtk-config --cflags` -DVERSION=\"$(VERSION)\"
+-LDFLAGS = `gtk-config --libs`
++CFLAGS = `gtk-config --cflags` -DVERSION=\"$(VERSION)\" $(OPTFLAGS)
++LDFLAGS = `gtk-config --libs` -s
+ 
+ OBJS = xfreecd.o cd_control.o cddbd.o cddb.o child_sync.o xpm_button.o
+ 

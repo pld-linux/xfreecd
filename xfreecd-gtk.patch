@@ -1,0 +1,23 @@
+diff -Nur xfreecd-0.7.7/xfreecd.c xfreecd-0.7.7.orig/xfreecd.c
+--- xfreecd-0.7.7/xfreecd.c	Mon Jul  6 00:25:57 1998
++++ xfreecd-0.7.7.orig/xfreecd.c	Thu Dec 10 19:20:19 1998
+@@ -2355,9 +2355,6 @@
+ #ifdef GOOBER
+       gtk_clist_set_selection_mode (GTK_CLIST (display.teclist), GTK_SELECTION_BROWSE);
+ #endif
+-      gtk_clist_set_policy (GTK_CLIST (display.teclist),
+-			    GTK_POLICY_AUTOMATIC,
+-			    GTK_POLICY_AUTOMATIC);
+ 
+       gtk_clist_set_column_justification (GTK_CLIST (display.teclist), 0, GTK_JUSTIFY_CENTER);
+       gtk_clist_set_column_justification (GTK_CLIST (display.teclist), 1, GTK_JUSTIFY_LEFT);
+@@ -2508,9 +2505,6 @@
+ #ifdef GOOBER
+ 	  gtk_clist_set_selection_mode (GTK_CLIST (display.tclist), GTK_SELECTION_BROWSE);
+ #endif
+-	  gtk_clist_set_policy (GTK_CLIST (display.tclist),
+-				GTK_POLICY_AUTOMATIC,
+-				GTK_POLICY_AUTOMATIC);
+ 
+ 	  gtk_clist_set_column_justification (GTK_CLIST (display.tclist), 0, GTK_JUSTIFY_CENTER);
+ 	  gtk_clist_set_column_justification (GTK_CLIST (display.tclist), 1, GTK_JUSTIFY_LEFT);
