@@ -3,10 +3,10 @@ Summary(pl):	Xfreecd - odtwarzacz p³yt audio ze wsparciem dla CDDB
 Name:		xfreecd
 Version:	0.7.8
 Release:	1
-Copyright:	GPL
+License:	GPL
 Group:		X11/Amusements
 Group(pl):	X11/Rozrywka
-Source:		http://www.tatoosh.com/nexus/linux/%{name}-%{version}.tar.gz
+Source0:	http://www.tatoosh.com/nexus/linux/%{name}-%{version}.tar.gz
 Patch0:		xfreecd.patch
 Patch1:		xfreecd-gtk.patch
 Icon:		xfreecd.gif
@@ -18,9 +18,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 XfreeCD is a X windows program written using GTK+ that looks like the
-frontpanel of a cd player. It also supports the CDDB database of CD track
-information, and is certified for submitting new CD information to the
-database. At 137x90 it takes up a small amount of screen space.
+frontpanel of a cd player. It also supports the CDDB database of CD
+track information, and is certified for submitting new CD information
+to the database. At 137x90 it takes up a small amount of screen space.
 
 %description -l pl
 Xfreecd jest odtwarzaczem p³yt audio opartym o bibliotekê GTK+.
@@ -38,10 +38,10 @@ make OPTFLAGS="$RPM_OPT_FLAGS"
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_includedir}/X11/pixmaps} \
-	$RPM_BUILD_ROOT/etc/X11/wmconfig
+$RPM_BUILD_ROOT%{_sysconfdir}/X11/wmconfig
 
 install -s %{name} $RPM_BUILD_ROOT%{_bindir}
-install %{name}.wmconfig $RPM_BUILD_ROOT/etc/X11/wmconfig/%{name}
+install %{name}.wmconfig $RPM_BUILD_ROOT%{_sysconfdir}/X11/wmconfig/%{name}
 install %{name}.xpm $RPM_BUILD_ROOT%{_includedir}/X11/pixmaps
 
 gzip -9nf README HISTORY
@@ -52,7 +52,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc {README,HISTORY}.gz
-/etc/X11/wmconfig/%{name}
+%{_sysconfdir}/X11/wmconfig/%{name}
 
 %attr(755,root,root) %{_bindir}/%{name}
 %{_includedir}/X11/pixmaps/%{name}.xpm
