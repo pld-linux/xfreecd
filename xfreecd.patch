@@ -3,7 +3,7 @@
 @@ -9,8 +9,8 @@
  endif
  
- VERSION = 0.7.7
+ VERSION = 0.7.8
 -CFLAGS = -O2 -Wall -pipe `gtk-config --cflags` -DVERSION=\"$(VERSION)\"
 -LDFLAGS = `gtk-config --libs`
 +CFLAGS = `gtk-config --cflags` -DVERSION=\"$(VERSION)\" $(OPTFLAGS)
