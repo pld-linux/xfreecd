@@ -2,14 +2,18 @@ Summary:	Xfreecd, a CD player with CDDB features
 Summary(pl):	Xfreecd - odtwarzacz p³yt audio ze wsparciem dla CDDB
 Name:		xfreecd
 Version:	0.7.7
-Release:	2
+Release:	3
 Copyright:	GPL
 Group:		X11/Amusements
 Group(pl):	X11/Rozrywka
 URL:		http://www.tatoosh.com/nexus/xfreecd.shtml
 Source:		http://www.tatoosh.com/nexus/linux/%{name}-%{version}.tar.gz
-Patch:		xfreecd.patch
+Patch0:		xfreecd.patch
+Patch1:		xfreecd-gtk.patch
 Icon:		xfreecd.gif
+BuildPrereq:	XFree86-devel
+BuildPrereq:	gtk+-devel
+BuildPrereq:	glib-devel
 Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -25,10 +29,11 @@ Mo¿e on dodawaæ swoje zapisy do takiej bazy.
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 %build
-make CFLAGS="$RPM_OPT_FLAGS" LDFLAGS=-s
+make OPTFLAGS="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -46,12 +51,21 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc {README,HISTORY}.gz
-%config(missingok) /etc/X11/wmconfig/xfreecd
+/etc/X11/wmconfig/xfreecd
 
 %attr(755,root,root) /usr/X11R6/bin/xfreecd
 /usr/X11R6/include/X11/pixmaps/xfreecd.xpm
 
 %changelog
+* Thu May 13 1999 Piotr Czerwiñski <pius@pld.org.pl>
+  [0.7.7-3]
+- removed %config from wmconfig file,
+- added BuildPrereq rules,
+- added xfreecd-gtk.patch,
+- fixed passing RPM_OPT_FLAGS,
+- removed LDFLAGS=-s,
+- rebuild on rpm 3.
+
 * Thu Apr 15 1999 Micha³ Kuratczyk <kura@pld.org.pl>
   [0.7.7-2]
 - added Group(pl)
