@@ -16,7 +16,7 @@ BuildPrereq:	gtk+-devel
 BuildPrereq:	glib-devel
 Buildroot:	/tmp/%{name}-%{version}-root
 
-%define	_prefix		/usr/X11R6
+%define	_prefix	/usr/X11R6
 
 %description
 XfreeCD is a X windows program written using GTK+ that looks like the
@@ -41,6 +41,7 @@ make OPTFLAGS="$RPM_OPT_FLAGS"
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_includedir}/X11/pixmaps} \
 	$RPM_BUILD_ROOT/etc/X11/wmconfig
+
 install -s %{name} $RPM_BUILD_ROOT%{_bindir}
 install %{name}.wmconfig $RPM_BUILD_ROOT/etc/X11/wmconfig/%{name}
 install %{name}.xpm $RPM_BUILD_ROOT%{_includedir}/X11/pixmaps
@@ -59,22 +60,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/X11/pixmaps/%{name}.xpm
 
 %changelog
-* Thu May 13 1999 Piotr Czerwiñski <pius@pld.org.pl>
+* Thu May 20 1999 Piotr Czerwiñski <pius@pld.org.pl> 
   [0.7.7-3]
-- removed %config from wmconfig file,
-- added BuildPrereq rules,
-- added xfreecd-gtk.patch,
-- fixed passing RPM_OPT_FLAGS,
-- removed LDFLAGS=-s,
-- rebuild on rpm 3.
-
-* Thu Apr 15 1999 Micha³ Kuratczyk <kura@pld.org.pl>
-  [0.7.7-2]
-- added Group(pl)
-- added gzipping documentation
-- added %config(missingok) for wmconfig file
-- added LDFLAGS=-s
-
-* Mon Sep 21 1998 Pawe³ Gajda <pagaj@shadow.eu.org>
-- added pl translation,
-- patched to make it compile with RPM_OPT_FLAGS.
+- spec file written by Pawe³ Gajda <pagaj@shadow.eu.org>,
+  modified by me and Micha³ Kuratczyk <kura@pld.org.pl>.
