@@ -58,9 +58,3 @@ rm -rf $RPM_BUILD_ROOT
 
 %attr(755,root,root) %{_bindir}/%{name}
 %{_includedir}/X11/pixmaps/%{name}.xpm
-
-%changelog
-* Thu May 20 1999 Piotr Czerwiñski <pius@pld.org.pl> 
-  [0.7.7-3]
-- spec file written by Pawe³ Gajda <pagaj@shadow.eu.org>,
-  modified by me and Micha³ Kuratczyk <kura@pld.org.pl>.
