@@ -16,6 +16,8 @@ BuildPrereq:	gtk+-devel
 BuildPrereq:	glib-devel
 Buildroot:	/tmp/%{name}-%{version}-root
 
+%define	_prefix		/usr/X11R6
+
 %description
 XfreeCD is a X windows program written using GTK+ that looks like the
 frontpanel of a cd player. It also supports the CDDB database of CD track
@@ -37,11 +39,11 @@ make OPTFLAGS="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/{etc/X11/wmconfig,usr/X11R6/{bin,include/X11/pixmaps}}
-
-install -s xfreecd $RPM_BUILD_ROOT/usr/X11R6/bin
-install xfreecd.wmconfig $RPM_BUILD_ROOT/etc/X11/wmconfig/xfreecd
-install xfreecd.xpm $RPM_BUILD_ROOT/usr/X11R6/include/X11/pixmaps
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_includedir}/X11/pixmaps} \
+	$RPM_BUILD_ROOT/etc/X11/wmconfig
+install -s %{name} $RPM_BUILD_ROOT%{_bindir}
+install %{name}.wmconfig $RPM_BUILD_ROOT/etc/X11/wmconfig/%{name}
+install %{name}.xpm $RPM_BUILD_ROOT%{_includedir}/X11/pixmaps
 
 gzip -9nf README HISTORY
 
@@ -51,10 +53,10 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc {README,HISTORY}.gz
-/etc/X11/wmconfig/xfreecd
+/etc/X11/wmconfig/%{name}
 
-%attr(755,root,root) /usr/X11R6/bin/xfreecd
-/usr/X11R6/include/X11/pixmaps/xfreecd.xpm
+%attr(755,root,root) %{_bindir}/%{name}
+%{_includedir}/X11/pixmaps/%{name}.xpm
 
 %changelog
 * Thu May 13 1999 Piotr Czerwiñski <pius@pld.org.pl>
