@@ -5,16 +5,17 @@ Version:	0.7.8
 Release:	1
 License:	GPL
 Group:		X11/Amusements
+Group(de):	X11/Unterhaltung
 Group(pl):	X11/Rozrywka
 Source0:	http://www.tatoosh.com/nexus/linux/%{name}-%{version}.tar.gz
-Patch0:		xfreecd.patch
-Patch1:		xfreecd-gtk.patch
+Patch0:		%{name}.patch
+Patch1:		%{name}-gtk.patch
 Icon:		xfreecd.gif
 URL:		http://www.tatoosh.com/nexus/xfreecd.shtml
 BuildRequires:	gtk+-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix	/usr/X11R6
+%define		_prefix		/usr/X11R6
 
 %description
 XfreeCD is a X windows program written using GTK+ that looks like the
@@ -33,14 +34,14 @@ Mo¿e on dodawaæ swoje zapisy do takiej bazy.
 %patch1 -p1
 
 %build
-%{__make} OPTFLAGS="$RPM_OPT_FLAGS"
+%{__make} OPTFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_includedir}/X11/pixmaps} \
-$RPM_BUILD_ROOT%{_sysconfdir}/X11/wmconfig
+	$RPM_BUILD_ROOT%{_sysconfdir}/X11/wmconfig
 
-install -s %{name} $RPM_BUILD_ROOT%{_bindir}
+install %{name} $RPM_BUILD_ROOT%{_bindir}
 install %{name}.wmconfig $RPM_BUILD_ROOT%{_sysconfdir}/X11/wmconfig/%{name}
 install %{name}.xpm $RPM_BUILD_ROOT%{_includedir}/X11/pixmaps
 
