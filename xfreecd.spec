@@ -11,9 +11,7 @@ Patch0:		xfreecd.patch
 Patch1:		xfreecd-gtk.patch
 Icon:		xfreecd.gif
 URL:		http://www.tatoosh.com/nexus/xfreecd.shtml
-BuildRequires:	XFree86-devel
 BuildRequires:	gtk+-devel
-BuildRequires:	glib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix	/usr/X11R6
