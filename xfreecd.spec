@@ -1,15 +1,16 @@
-Summary:     Xfreecd, a CD player with CDDB features
-Summary(pl): Xfreecd - odtwarzacz p³yt audio ze wsparciem dla CDDB
-Name:        xfreecd
-Version:     0.7.7
-Release:     1
-Copyright:   GPL
-Group:       X11/Amusements
-Source:      http://www.tatoosh.com/nexus/linux/%{name}-%{version}.tar.gz
-Patch:       xfreecd.patch
-URL:         http://www.tatoosh.com/nexus/xfreecd.shtml
-Icon:        xfreecd.gif
-Buildroot:   /tmp/%{name}-%{version}-root
+Summary:	Xfreecd, a CD player with CDDB features
+Summary(pl):	Xfreecd - odtwarzacz p³yt audio ze wsparciem dla CDDB
+Name:		xfreecd
+Version:	0.7.7
+Release:	2
+Copyright:	GPL
+Group:		X11/Amusements
+Group(pl):	X11/Rozrywka
+URL:		http://www.tatoosh.com/nexus/xfreecd.shtml
+Source:		http://www.tatoosh.com/nexus/linux/%{name}-%{version}.tar.gz
+Patch:		xfreecd.patch
+Icon:		xfreecd.gif
+Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
 XfreeCD is a X windows program written using GTK+ that looks like the
@@ -27,7 +28,7 @@ Mo¿e on dodawaæ swoje zapisy do takiej bazy.
 %patch -p1
 
 %build
-CFLAGS=$RPM_OPT_FLAGS make
+make CFLAGS="$RPM_OPT_FLAGS" LDFLAGS=-s
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -37,17 +38,27 @@ install -s xfreecd $RPM_BUILD_ROOT/usr/X11R6/bin
 install xfreecd.wmconfig $RPM_BUILD_ROOT/etc/X11/wmconfig/xfreecd
 install xfreecd.xpm $RPM_BUILD_ROOT/usr/X11R6/include/X11/pixmaps
 
+gzip -9nf README HISTORY
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(644, root, root, 755)
-%doc README HISTORY
-/etc/X11/wmconfig/xfreecd
+%defattr(644,root,root,755)
+%doc {README,HISTORY}.gz
+%config(missingok) /etc/X11/wmconfig/xfreecd
+
+%attr(755,root,root) /usr/X11R6/bin/xfreecd
 /usr/X11R6/include/X11/pixmaps/xfreecd.xpm
-%attr(755, root, root) /usr/X11R6/bin/xfreecd
 
 %changelog
+* Thu Apr 15 1999 Micha³ Kuratczyk <kura@pld.org.pl>
+  [0.7.7-2]
+- added Group(pl)
+- added gzipping documentation
+- added %config(missingok) for wmconfig file
+- added LDFLAGS=-s
+
 * Mon Sep 21 1998 Pawe³ Gajda <pagaj@shadow.eu.org>
 - added pl translation,
 - patched to make it compile with RPM_OPT_FLAGS.
