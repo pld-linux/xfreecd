@@ -5,11 +5,12 @@ Version:	0.7.8
 Release:	1
 License:	GPL
 Group:		X11/Amusements
-Source0:	http://www.tatoosh.com/nexus/linux/%{name}-%{version}.tar.gz
+Source0:	http://www.brianlane.com/linux/%{name}-%{version}.tar.gz
+# Source0-md5:	96edec5a4586a251da32923ac9c8caa9
 Patch0:		%{name}.patch
 Patch1:		%{name}-gtk.patch
 Icon:		xfreecd.gif
-URL:		http://www.tatoosh.com/nexus/xfreecd.shtml
+URL:		http://www.brianlane.com/linux/
 BuildRequires:	gtk+-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
