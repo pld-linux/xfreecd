@@ -5,8 +5,6 @@ Version:	0.7.8
 Release:	1
 License:	GPL
 Group:		X11/Amusements
-Group(de):	X11/Unterhaltung
-Group(pl):	X11/Rozrywka
 Source0:	http://www.tatoosh.com/nexus/linux/%{name}-%{version}.tar.gz
 Patch0:		%{name}.patch
 Patch1:		%{name}-gtk.patch
