@@ -43,14 +43,12 @@ install %{name} $RPM_BUILD_ROOT%{_bindir}
 install %{name}.wmconfig $RPM_BUILD_ROOT%{_sysconfdir}/X11/wmconfig/%{name}
 install %{name}.xpm $RPM_BUILD_ROOT%{_includedir}/X11/pixmaps
 
-gzip -9nf README HISTORY
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {README,HISTORY}.gz
+%doc README HISTORY
 %{_sysconfdir}/X11/wmconfig/%{name}
 
 %attr(755,root,root) %{_bindir}/%{name}
