@@ -9,7 +9,6 @@ Source0:	http://www.brianlane.com/linux/%{name}-%{version}.tar.gz
 # Source0-md5:	96edec5a4586a251da32923ac9c8caa9
 Patch0:		%{name}.patch
 Patch1:		%{name}-gtk.patch
-Icon:		xfreecd.gif
 URL:		http://www.brianlane.com/linux/
 BuildRequires:	gtk+-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
