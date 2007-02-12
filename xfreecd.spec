@@ -1,5 +1,5 @@
 Summary:	Xfreecd, a CD player with CDDB features
-Summary(pl.UTF-8):   Xfreecd - odtwarzacz płyt audio ze wsparciem dla CDDB
+Summary(pl.UTF-8):	Xfreecd - odtwarzacz płyt audio ze wsparciem dla CDDB
 Name:		xfreecd
 Version:	0.7.8
 Release:	1
