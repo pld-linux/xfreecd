@@ -1,5 +1,5 @@
 Summary:	Xfreecd, a CD player with CDDB features
-Summary(pl):	Xfreecd - odtwarzacz p³yt audio ze wsparciem dla CDDB
+Summary(pl.UTF-8):   Xfreecd - odtwarzacz pÅ‚yt audio ze wsparciem dla CDDB
 Name:		xfreecd
 Version:	0.7.8
 Release:	1
@@ -21,10 +21,10 @@ frontpanel of a cd player. It also supports the CDDB database of CD
 track information, and is certified for submitting new CD information
 to the database. At 137x90 it takes up a small amount of screen space.
 
-%description -l pl
-Xfreecd jest odtwarzaczem p³yt audio opartym o bibliotekê GTK+.
-Korzysta on z bazy danych CDDB zawieraj±cej informacje o p³ytach CD.
-Mo¿e on dodawaæ swoje zapisy do takiej bazy.
+%description -l pl.UTF-8
+Xfreecd jest odtwarzaczem pÅ‚yt audio opartym o bibliotekÄ™ GTK+.
+Korzysta on z bazy danych CDDB zawierajÄ…cej informacje o pÅ‚ytach CD.
+MoÅ¼e on dodawaÄ‡ swoje zapisy do takiej bazy.
 
 %prep
 %setup -q
